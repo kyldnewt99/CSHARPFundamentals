@@ -19,5 +19,11 @@ namespace _07_RepositoryPattern_Repository
             bool wasAdded = (_contentDirectory.Count > startingCount) ? true : false;
             return wasAdded;
         }
+        //READ
+        public List<StreamingContent> GetContents()
+        {
+            return _contentDirectory;
+        }
+
     }
 }
