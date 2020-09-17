@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Movie.cs" />
+    <Compile Include="Show.cs" />
     <Compile Include="StreamingContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamingContentRepository.cs" />
+    <Compile Include="StreamingRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
