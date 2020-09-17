@@ -18,22 +18,40 @@ namespace _07_RepositoryPattern_Repository
         Documentary,
         Thriller
     }
+    public enum MaturityRating { G, PG, PG_13,R,NC_17,MA}
     public class StreamingContent
     {
         public string Title { get; set; }
         public string Description { get; set; }
         public float StarRating { get; set; }
-        public string MaturityRating { get; set; }
-        public bool IsFamilyFriendly { get; set; }
+        public MaturityRating MaturityRating { get; set; }
+        public bool IsFamilyFriendly 
+        {
+            get
+            {
+                switch(MaturityRating)
+                {
+                    case MaturityRating.G:
+                    case MaturityRating.PG:
+                        return true;
+                    case MaturityRating.PG_13:
+                    case MaturityRating.NC_17:
+                    case MaturityRating.MA:
+                    case MaturityRating.R:
+                        return false;
+                    default:
+                        return false;
+                }
+            }
+        }
         public GenreType TypeOfGenre { get; set; }
         public StreamingContent() { }
-        public StreamingContent(string title, string description, float starRating, string mRating, bool famFriendly, GenreType tOG)
+        public StreamingContent(string title, string description, float starRating, MaturityRating mRating, bool famFriendly, GenreType tOG)
         {
             Title = title;
             Description = description;
             StarRating = starRating;
             MaturityRating = mRating;
-            IsFamilyFriendly = famFriendly;
             TypeOfGenre = tOG;
 
         }

@@ -49,7 +49,7 @@ namespace _07_RepositoryPattern_Tests
         public void Arrange()
         {
             _repo = new StreamingContentRepository();
-            _content = new StreamingContent("Oceans 8", "do crime?", 100, "I do not know", true, GenreType.Action);
+            _content = new StreamingContent("Oceans 8", "do crime?", 100, MaturityRating.PG_13, true, GenreType.Action);
             _repo.AddContentToDirectory(_content);
         }
         [TestMethod]
@@ -66,7 +66,7 @@ namespace _07_RepositoryPattern_Tests
         public void UpdateExistingContent_ShouldReturnTrue()
         {
             //arrange
-            StreamingContent updatedContent = new StreamingContent("Italian Job", "do crime? in Italy", 100, "I do not know", true, GenreType.Action);
+            StreamingContent updatedContent = new StreamingContent("Italian Job", "do crime? in Italy", 100, MaturityRating.PG_13, true, GenreType.Action);
 
             //Act
             bool updateResult = _repo.UpdateExistingContent("Oceans 8", updatedContent);
