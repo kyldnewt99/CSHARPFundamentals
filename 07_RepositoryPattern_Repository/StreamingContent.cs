@@ -8,7 +8,7 @@ namespace _07_RepositoryPattern_Repository
 {
     public enum GenreType 
     {
-        Horror,
+        Horror =1 ,
         RomCom,
         Fantasy,
         SciFi,
