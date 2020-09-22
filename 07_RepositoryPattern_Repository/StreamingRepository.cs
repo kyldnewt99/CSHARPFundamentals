@@ -54,5 +54,22 @@ namespace _07_RepositoryPattern_Repository
         //write GetAllMovies
         //GetByOtherParameters ex GetAllFamilyFriendlyMovies
         //Get Shows with over x episodes
+        public List<Movie> GetAllMovies()
+        {
+            //make a space to save all shows
+            List<Movie> allMovies = new List<Movie>();
+            //pull one item and see if it is a show
+            //make sure to save that off to the side
+            //return that list
+            foreach (StreamingContent content in _contentDirectory)
+            {
+                if (content is Movie)
+                {
+                    allMovies.Add((Movie)content);
+                }
+            }
+            //return that list
+            return allMovies;
+        }
     }
 }

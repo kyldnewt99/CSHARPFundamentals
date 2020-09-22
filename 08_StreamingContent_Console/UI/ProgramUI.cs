@@ -22,12 +22,17 @@ namespace _08_StreamingContent_Console.UI
             bool continueToRun = true;
             while (continueToRun)
             {
+                //add one of the following
+                //Get all shows
+                //Get all movies
+                //get show/movie by title
                 Console.Clear();
                 Console.WriteLine("Enter the number of the option you'd like to select: \n" + "1) Show all streaming content \n" +
                     "2) Find by title \n" +
                     "3) Add new content \n" +
                     "4) Remove content \n" +
-                    "5) Exit");
+                    "5) Show all movies \n" +
+                    "6) Exit");
                 string userInput = Console.ReadLine();
                 switch (userInput)
                 {
@@ -48,6 +53,10 @@ namespace _08_StreamingContent_Console.UI
                         RemoveContentFromList();
                         break;
                     case "5":
+                        //Show all movies
+                        ShowAllMovies();
+                        break;
+                    case "6":
                         //Exit
                         continueToRun = false;
                         break;
@@ -146,6 +155,13 @@ namespace _08_StreamingContent_Console.UI
             var titleOne = new StreamingContent("Toy Story", "Toys have a story", 4.5f, MaturityRating.PG, false, GenreType.Bromance);
             var titleTwo = new StreamingContent("Star Wars", "Stars at War", 10f, MaturityRating.PG_13, false, GenreType.Documentary );
             var titleThree = new StreamingContent("Baby Driver", "Your driver for the night is a baby", 48f, MaturityRating.MA, false, GenreType.Documentary);
+
+            Movie movieOne = new Movie();
+            Movie movieTwo = new Movie("Venom", "Two bros", 9001, MaturityRating.NC_17, true, GenreType.RomCom, 123);
+            Movie movieThree = new Movie("test movie", "this is a test", 4, MaturityRating.PG, true, GenreType.Thriller, 351);
+            _streamingRepo.AddContentToDirectory(movieOne);
+            _streamingRepo.AddContentToDirectory(movieTwo);
+            _streamingRepo.AddContentToDirectory(movieThree);
             _streamingRepo.AddContentToDirectory(titleOne);
             _streamingRepo.AddContentToDirectory(titleTwo);
             _streamingRepo.AddContentToDirectory(titleThree);
@@ -208,6 +224,18 @@ namespace _08_StreamingContent_Console.UI
                 Console.WriteLine("INVALID OPTION");
             }
             Console.WriteLine("Press any key to continue....");
+            Console.ReadKey();
+        }
+        private void ShowAllMovies()
+        {
+            Console.Clear();
+            //GET all the movies
+            List<Movie> listofMovies = _streamingRepo.GetAllMovies();
+            foreach (var oneMovie in listofMovies)
+            {
+                DisplaySimple(oneMovie);
+            }
+            Console.WriteLine("Press any key to continue.....");
             Console.ReadKey();
         }
 
