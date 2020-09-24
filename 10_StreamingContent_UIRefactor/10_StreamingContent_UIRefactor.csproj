@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FAB59BF-B73F-4D46-BB0D-46905B004277}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>_08_StreamingContent_Console</RootNamespace>
-    <AssemblyName>08_StreamingContent_Console</AssemblyName>
+    <ProjectGuid>{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_10_StreamingContent_UIRefactor</RootNamespace>
+    <AssemblyName>10_StreamingContent_UIRefactor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,22 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IConsole.cs" />
+    <Compile Include="MockConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\ProgramUI.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\07_RepositoryPattern_Repository\07_RepositoryPattern_Repository.csproj">
-      <Project>{DE9E0DC8-ECF6-4A75-8FEF-96DEE6B003CF}</Project>
-      <Name>07_RepositoryPattern_Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\10_StreamingContent_UIRefactor\10_StreamingContent_UIRefactor.csproj">
-      <Project>{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}</Project>
-      <Name>10_StreamingContent_UIRefactor</Name>
-    </ProjectReference>
+    <Compile Include="RealConsole.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
