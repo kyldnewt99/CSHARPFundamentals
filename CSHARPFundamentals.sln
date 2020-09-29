@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Interfaces_WorkingWithDI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_StreamingContent_UIRefactor", "10_StreamingContent_UIRefactor\10_StreamingContent_UIRefactor.csproj", "{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_StreamingContent_UIRefactor_Tests", "10_StreamingContent_UIRefactor_Tests\10_StreamingContent_UIRefactor_Tests.csproj", "{F497DF9D-4D7B-42F9-B05F-40D19B9C270D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581E40B9-BC29-42E2-AB76-EAE5C7A89E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F497DF9D-4D7B-42F9-B05F-40D19B9C270D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F497DF9D-4D7B-42F9-B05F-40D19B9C270D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F497DF9D-4D7B-42F9-B05F-40D19B9C270D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F497DF9D-4D7B-42F9-B05F-40D19B9C270D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
